@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{base}">
+    <head>
+        <meta name="description" content="Login Page"/>
+        <title>Login Page</title>
+    </head>
+    <body>
+        
+        <th:block layout:fragment="breadcrumb">
+            <span class="breadcrumb-item"><a th:href="@{/}">Home</a></span>
+            &emsp;&gt;&emsp;<span class="breadcrumb-item">Login Page</span>
+        </th:block>
+        
+        <th:block layout:fragment="page_content_heading">Login</th:block>
+        
+        <th:block layout:fragment="page_content" id="page_content">
+
+            <form th:action="@{/login}" method="post">
+                <table class="table">
+                    <tr class="form-row">
+                        <td class="form-col-0"><label for="username">User Name:</label></td>
+                        <td class="form-col-1">
+                            <input class="input" type="text" required="true" 
+                                   id="username" name="username" size="32" maxlength="127"/>
+                        </td>
+                        <td class="form-col-2"></td>
+                    </tr>
+                    <tr class="form-row">
+                        <td class="form-col-0"><label for="password">Password:</label></td>
+                        <td class="form-col-1">
+                            <input class="input" type="password" required="true" 
+                                   id="password" name="password" size="32" maxlength="32"/>
+                        </td>
+                        <td class="form-col-2"></td>
+                    </tr>
+                    <tr class="form-row">
+                        <td colspan="3">
+                            <input class="button primary-button" type="reset" value="Reset" />
+                            &emsp;<input class="button primary-button" type="submit" value="Login" />
+                        </td>    
+                    </tr>
+                </table>
+            </form>
+        </th:block>
+        
+    </body>
+</html>

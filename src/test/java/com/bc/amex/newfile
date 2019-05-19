@@ -1,0 +1,18 @@
+From Jackson vs from Json simple
+---------------------------
+User: com.bc.elmi.pu.entities.User[ userid=3 ]
+User: com.bc.elmi.pu.entities.User[ userid=3 ]
+
+Appointment: {description=Student of a Course in a Department, timecreated=Sat Apr 20 16:09:53 WAT 2019, timemodified=Sat Apr 20 16:09:53 WAT 2019, userList=[{}], appointmentid=8, appointmentname=Student}
+Appointment: {description=Student of a Course in a Department, timecreated=Sat Apr 20 15:09:53 WAT 2019, timemodified=Sat Apr 20 15:09:53 WAT 2019, userList=[{}], appointmentid=8, appointmentname=Student}
+
+Gender: {timecreated=Sat Apr 20 15:39:57 WAT 2019, timemodified=Sat Apr 20 15:39:57 WAT 2019, userList=[{}, {}], gendername=Female, genderid=2}
+Gender: {timecreated=Sat Apr 20 14:39:57 WAT 2019, timemodified=Sat Apr 20 14:39:57 WAT 2019, userList=[{}, {}], gendername=Female, genderid=2}
+
+
+Unit: {description=Syndicate 1, Senior Course - Department of Land Warfare, timecreated=Sat Apr 20 16:09:52 WAT 2019, timemodified=Sat Apr 20 16:09:52 WAT 2019, testList=[{}], userList=[{}], unitid=16, unitname=DLW, SC Syndicate 1}
+Unit: {description=Syndicate 1, Senior Course - Department of Land Warfare, timecreated=Sat Apr 20 15:09:52 WAT 2019, timemodified=Sat Apr 20 15:09:52 WAT 2019, testList=[{}], userList=[{}], unitid=16, unitname=DLW, SC Syndicate 1}
+
+
+Role: {description=Access for user who is logged in, timecreated=Sat Apr 20 16:09:51 WAT 2019, timemodified=Sat Apr 20 16:09:51 WAT 2019, userList=[{}, {}], permissionList=[], roleid=1, rolename=USER}
+Role: {description=Access for user who is logged in, timecreated=Sat Apr 20 15:09:51 WAT 2019, timemodified=Sat Apr 20 15:09:51 WAT 2019, userList=[{}, {}], permissionList=[], roleid=1, rolename=USER}

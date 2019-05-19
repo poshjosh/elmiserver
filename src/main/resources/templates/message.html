@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{base}">
+    <head>
+        <meta name="description" content="Armed Forces Command and Staff College - Learning Management Home Page"/>
+        <title>View Message</title>
+    </head>
+    <body>
+        
+        <th:block layout:fragment="breadcrumb">
+            <span class="breadcrumb-item">Home</span>
+            &emsp;&gt;&emsp;<span class="breadcrumb-item">View Message</span>
+        </th:block>
+        
+        <th:block layout:fragment="page_content_heading">
+            <p class="content-box-heading" th:text="${'Subject: ' + message.subject}"/>
+        </th:block>
+
+        <th:block layout:fragment="page_content">
+
+            <small><tt th:text="${'Sent on: ' + message.timecreated}"/></small><br/>
+            <small><tt th:text="${'   From: ' + message.sender.username}"/></small>
+
+            <hr/>
+            
+            <div th:utext="${message.content}"/>
+                
+        </th:block>
+        
+        <th:block layout:fragment="scripts"></th:block>
+    </body>
+</html>

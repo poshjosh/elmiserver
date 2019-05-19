@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="../static/resources/css/style_0.css" th:href="@{/resources/css/style_0.css}"/>
+        <title>Sidebar Fragment</title>
+    </head>
+    <body>
+        <th:block th:fragment="sidebar">
+            <div class="sidebar">
+                <div class="sidebar-heading face-0">Quick Links</div>
+                <div class="sidebar-body">
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Message/my/inbox}">View Inbox</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Message/my/outbox}">View Outbox</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Test?selector=future}">View Upcoming Tests</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-heading face-0">Create</div>
+                <div class="sidebar-body">
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/User/showForm}">User</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Test/showForm}">Test</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Appointment/showForm}">Appointment</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Unit/showForm}">Unit</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Course/showForm}">Course</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Role/showForm}">Role</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/create/Permission/showForm}">Permission</a>
+                    </div>
+                </div>
+            </div>    
+            <div class="sidebar">
+                <div class="sidebar-heading face-0">View All</div>
+                <div class="sidebar-body">
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Course}">Courses</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/User}">Users</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Message}">Messages</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Test}">Tests</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Testdocument}">Test Documents</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Testsetting}">Test Settings</a>
+                    </div>
+                    <div class="sidebar-item">
+                        <a th:href="@{/search/Document}">Documents</a>
+                    </div>
+                </div>
+            </div>    
+        </th:block>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{base}">
+    <head>
+        <meta name="description" th:content="${'Search results for ' + modelname}"/>
+        <title>Search results for [[${modelname}]]</title>
+    </head>
+    <body>
+
+        <th:block layout:fragment="breadcrumb">
+            <span class="breadcrumb-item"><a th:href="@{/}">Home</a></span>
+            &emsp;&gt;&emsp;<span class="breadcrumb-item">Search Results</span>
+        </th:block>
+
+        <div layout:fragment="page_content">
+            <th:block th:if="${SearchresultPage == null || SearchresultPage.empty}">
+                No search results
+            </th:block>
+            <th:block th:unless="${SearchresultPage == null || SearchresultPage.empty}">
+                <p>
+                    <th:block th:if="${SearchresultPage.hasPrevious}">
+                        <a class="heavy-max" th:href="@{/searchresults/{modelname}/page/{pagenum}(modelname=${modelname},pagenum=${SearchresultPage.pageNumber - 1})}">
+                            &lt;
+                        </a>
+                    </th:block>
+                    &emsp;
+                    <span th:text="${SearchresultPage.start + ' to ' + SearchresultPage.end + ' of ' + SearchresultPage.total + ' results'}"/>
+                    &emsp;
+                    <th:block th:if="${SearchresultPage.hasNext}">
+                        <a class="heavy-max" th:href="@{/searchresults/{modelname}/page/{pagenum}(modelname=${modelname},pagenum=${SearchresultPage.pageNumber + 1})}">
+                            &gt;
+                        </a>
+                    </th:block>
+                </p>
+                <div class="searchresults">
+                    <p class="searchresults-row" th:each="resultdata: ${SearchresultPage}">
+                        <a th:utext="${resultdata.summary}" 
+                           th:href="@{/read/{modelname}/showForm?modelid={modelid}(modelname=${modelname},modelid=${resultdata.id})}"/>
+                    </p>
+                </div>
+            </th:block>
+        </div>
+        
+    </body>
+</html>

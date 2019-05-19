@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"   
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Armed Forces Command and Staff College Learning Management Interface</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="../static/resources/css/style_0.css" th:href="@{/resources/css/style_0.css}"/>
+    </head>
+    <body>
+ 
+        <table>
+            <tr>
+                <td>
+                    <img style="margin:0.5em;" th:src="@{/resources/images/afcsc_logo.png}" alt="Armed Forces Command and Staff College logo"/>
+                </td>
+                <td style="width:100%; font-size:3em; font-weight:700; text-align:center;">
+                    Armed Forces Command And Staff College
+                </td>
+            </tr>
+        </table>
+
+        <div class="navbar face-0">
+            <span th:if="${#request.remoteUser == null}">
+                <a th:href="@{/login}">Sign in</a>
+            </span>
+            <span th:unless="${#request.remoteUser == null}">
+                [[${#request.remoteUser}]]&emsp;|&emsp;<a th:href="@{/logout}">Sign out</a>
+            </span>
+            &emsp;|&emsp;<span th:text="${#dates.format(#dates.createNow(), 'dd MMMM yyyy HH:mm')}"/>
+        </div>
+
+        <div class="container">
+            <div class="breadcrumb">
+                <th:block layout:fragment="breadcrumb">
+                </th:block>
+            </div>
+            <div class="content">
+
+                <table class="content-table">
+                    <tr class="content-row">
+                        <td class="content-col-0">
+                            <th:block layout:fragment="sidebar">
+                            </th:block>
+                            <th:block th:insert="fragments/sidebar_quicklinks.html">
+                            </th:block>
+                        </td>
+                        <td class="content-col-1">
+                            <h3 id="page_content_heading">
+                                <th:block layout:fragment="page_content_heading"></th:block>
+                            </h3>
+
+                            <p class="errormessage" th:if="${errors}" th:each="error: ${errors}" th:text="${error}"/>
+                            <p class="infomessage" th:if="${messages}" th:each="message: ${messages}" th:text="${message}"/>
+
+                            <div layout:fragment="page_content" id="page_content"></div>
+                        </td>    
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <th:block layout:fragment="scripts">
+        </th:block>
+    </body>
+ 
+</html>
